@@ -1,5 +1,7 @@
+require 'byebug'
 class PostsController < ApplicationController
   before_action :set_post, only: [:show]
+
   def index
   end
 
@@ -22,6 +24,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
+    
     params.require(:post).permit(:date, :rationale)
   end
 
