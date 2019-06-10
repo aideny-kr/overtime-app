@@ -3,13 +3,12 @@
 require 'rails_helper'
 
 describe 'navigate' do
-
   before do
     user = User.create!(first_name: "Jon", last_name: "Snow", email: "test2@test.com", password: "asdfasdf", password_confirmation: "asdfasdf")
     login_as(user, :scope => :user)
     visit new_post_path
   end
-  
+
   describe 'index' do
     it 'can be reached successfully' do
       visit posts_path
@@ -23,7 +22,6 @@ describe 'navigate' do
   end
 
   describe 'creation' do
-
     it 'has a new form that can be reached' do
       expect(page.status_code).to eq(200)
     end
